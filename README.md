@@ -3,7 +3,10 @@ Este es un proyecto básico que permite comunicar dispositivos a través de comu
 
 Para realizar la placa PCB en donde se colocó el Esp8266 se necesita los siguietes dispositivos:
 
-
+-Resistencia de 430 
+-
+-
+-
 
 ![Alt text](docs/esquematico.png)
 
