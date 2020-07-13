@@ -16,12 +16,15 @@ Para realizar la placa PCB en donde se colocó el Esp8266 se necesita los siguie
 
 A continuacion se muestra algunas imagenes del esquematico, el PCB y unos links donde se escuentra el video en el que fue basado este proyecto.
 
-###### Esquematico
+## Esquematico
 ![Alt text](docs/esquematico.png)
 
-###### PCB
+## PCB
 ![Alt text](docs/placa.png)
 
-###### Links
+## Links
+ El codigo base para el proyecto [GitHub Pages](https://www.youtube.com/watch?v=MD2pw21HAA8&t=848s)
+ 
+
 
 
