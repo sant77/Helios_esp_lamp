@@ -124,5 +124,9 @@ void loop() {
   if (mensaje == "F"){
     digitalWrite(2,LOW);
     }
+  if (WiFi.status() != WL_CONNECTED){
+    Serial.print("Reset");
+    ESP.restart();
+    }
   
   }
