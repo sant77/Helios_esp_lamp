@@ -47,10 +47,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
 }
 
 //Variables globales (Nombre de servidor,puerto,usuario,contraseña)
-const char* mqttServer = "54.227.205.125";
-const int mqttPort = 10515;
-const char* mqttUser = "placa1";
-const char* mqttPassword = "12345678";
+const char* mqttServer = "";
+const int mqttPort = ;
+const char* mqttUser = "";
+const char* mqttPassword = "";
 
 
 
