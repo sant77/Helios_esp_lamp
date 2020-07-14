@@ -61,7 +61,7 @@ PubSubClient client(espClient);
 //Setup (concetar a la red ,establecder entradas y salidas)
 
 void setup() {
-  pinMode(13,OUTPUT);//D7
+  pinMode(2,OUTPUT);
   Serial.begin(115200);
 
    //WiFiManager
