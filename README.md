@@ -24,7 +24,7 @@ A continuacion se muestra algunas imagenes del esquematico, el PCB y unos links 
 
 ## Links
  - El código base para el proyecto [Tutorial #11 ESP8266 (Parte1) - MQTT + CloudMQTT](https://www.youtube.com/watch?v=MD2pw21HAA8&t=848s)
- - Links para descargar el esqumatico y la PCB  [Wifi_lamp](https://easyeda.com/Santiago77/wifi_lamp)
+ - Links para descargar el esquematico y la PCB  [Wifi_lamp](https://easyeda.com/Santiago77/wifi_lamp)
 
 
 
