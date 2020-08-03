@@ -46,11 +46,12 @@ void callback(char* topic, byte* payload, unsigned int length) {
  
 }
 
+
 //Variables globales (Nombre de servidor,puerto,usuario,contraseña)
-const char* mqttServer = "";
-const int mqttPort = ;
-const char* mqttUser = "";
-const char* mqttPassword = "";
+const char* mqttServer = "54.227.205.125";
+const int mqttPort = 10515;
+const char* mqttUser = "placa1";
+const char* mqttPassword = "12345678";
 
 
 
@@ -61,7 +62,7 @@ PubSubClient client(espClient);
 //Setup (concetar a la red ,establecder entradas y salidas)
 
 void setup() {
-  pinMode(2,OUTPUT);
+  pinMode(2,OUTPUT);//D7
   Serial.begin(115200);
 
    //WiFiManager
@@ -113,8 +114,41 @@ void setup() {
  
 }
 
+//------------------------RECONNECT-----------------------------
+void reconnect() {
+  uint8_t retries = 3;
+  // Loop hasta que estamos conectados
+  while (!client.connected()) {
+    Serial.print("Intentando conexion MQTT...");
+    if (client.connect("ESP8266Client", mqttUser, mqttPassword )) {
+      Serial.println("conectado otra vez :3");
+      client.subscribe("esp/helios/iluminacion");
+ 
+    } else {
+      Serial.print("fallo, rc=");
+      Serial.print(client.state());
+      Serial.println(" intenta nuevamente en 5 segundos");
+      // espera 5 segundos antes de reintentar
+      delay(5000);
+    }
+    retries--;
+    if (retries == 0) {
+      // esperar a que el WDT lo reinicie
+      while (1);
+    }
+  }
+}
+
 
 void loop() {
+  if (!client.connected()) {
+    reconnect();
+  }
+
+  if (WiFi.status() != WL_CONNECTED){
+    Serial.print("Reset");
+    ESP.reset();
+    }
   
   client.loop();
   if (mensaje == "N"){
@@ -124,9 +158,4 @@ void loop() {
   if (mensaje == "F"){
     digitalWrite(2,LOW);
     }
-  if (WiFi.status() != WL_CONNECTED){
-    Serial.print("Reset");
-    ESP.restart();
-    }
-  
   }
